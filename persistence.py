@@ -21,4 +21,4 @@ def archive_ticket(ticket): # appends a single ticket to archive.json when marke
         data = []
     data.append(ticket.to_dict()) # convert Task to dictionary and append to archive list
     with open('archive.json', 'w') as f:
-        json.dump(data, f, indent=4) # write full archive with append back to file
+        json.dump(data, f, indent=4) # write full archive with append back to file 
