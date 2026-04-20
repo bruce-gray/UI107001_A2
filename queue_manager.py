@@ -86,6 +86,7 @@ class QueueManager:
             raise ValueError(f'Ticket with ID {ticket_id} not found.')
         
     def close_ticket(self, ticket_id, status):
+        status = status.strip().capitalize()
         if status not in ['Completed', 'Closed']:
             raise ValueError('Status must be Completed or Closed.')
         for i in range(len(self.tickets)):
