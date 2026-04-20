@@ -27,6 +27,10 @@ def main():
         elif choice == '2':
             try:
                 ticket_id = int(input('\nEnter ticket ID: '))
+            except ValueError:
+                print('Please enter a valid integer ticket ID.')
+                continue
+            try:
                 ticket = qm.get_ticket(ticket_id)
                 print(ticket)
             except ValueError as e:
@@ -41,6 +45,10 @@ def main():
                 priority = int(input('Priority (1-3): '))
                 est_time = float(input('Estimated time (hours): '))
                 deadline = date.fromisoformat(input('Deadline (YYYY-MM-DD): '))
+            except ValueError:
+                print('Invalid input. Priority must be a number (1-3), estimated time a number, and deadline in YYYY-MM-DD format.')
+                continue
+            try:
                 new_ticket = qm.add_ticket(title, desc, requester, priority, est_time, deadline)
                 print(f'\nTicket #{new_ticket.ticket_id} created successfully.')
             except ValueError as e:
@@ -49,6 +57,10 @@ def main():
         elif choice == '4':
             try:
                 ticket_id = int(input('\nEnter ticket ID to assign: '))
+            except ValueError:
+                print('Please enter a valid integer ticket ID.')
+                continue
+            try:
                 ticket = qm.get_ticket(ticket_id)
                 assignee = input('\nEnter assignee: ')
                 qm.assign_ticket(ticket_id, assignee)
@@ -60,6 +72,10 @@ def main():
         elif choice == '5':
             try:
                 ticket_id = int(input('\nEnter ticket ID to close or mark as completed: '))
+            except ValueError:
+                print('Please enter a valid integer ticket ID.')
+                continue
+            try:
                 ticket = qm.get_ticket(ticket_id)
                 status = input('\nMark as Closed or Completed?: ')
                 qm.close_ticket(ticket_id, status)
