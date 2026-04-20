@@ -1,0 +1,46 @@
+[
+    {
+        "ticket_id": 2,
+        "title": "Test 2",
+        "desc": "Testing after bugfix",
+        "requester": "Bruce",
+        "priority": 2,
+        "est_time": 1.0,
+        "deadline": "2026-05-05",
+        "status": "In Progress",
+        "assignee": "Bruce"
+    },
+    {
+        "ticket_id": 4,
+        "title": "URGENT TICKET",
+        "desc": "this should go to the top",
+        "requester": "brucer",
+        "priority": 1,
+        "est_time": 3.5,
+        "deadline": "2026-10-10",
+        "status": "Pending",
+        "assignee": "Unassigned"
+    },
+    {
+        "ticket_id": 5,
+        "title": "tiebreaker 1",
+        "desc": "this should be the new 2nd ticket",
+        "requester": "dev",
+        "priority": 2,
+        "est_time": 1.0,
+        "deadline": "2026-04-22",
+        "status": "Pending",
+        "assignee": "Unassigned"
+    },
+    {
+        "ticket_id": 6,
+        "title": "tiebreaker 2",
+        "desc": "this should be the new 4th ticket",
+        "requester": "yeah",
+        "priority": 2,
+        "est_time": 2.0,
+        "deadline": "2026-05-05",
+        "status": "Pending",
+        "assignee": "Unassigned"
+    }
+]

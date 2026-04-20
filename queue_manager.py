@@ -72,6 +72,8 @@ class QueueManager:
         heapq.heappush(self.heap, (new_ticket.priority, new_ticket.deadline, new_ticket.ticket_id, new_ticket))
         persistence.save_tickets(self.tickets)
 
+        return new_ticket
+
     def assign_ticket(self, ticket_id, assignee):
         for i in range(len(self.tickets)):
             if self.tickets[i].ticket_id == ticket_id:
