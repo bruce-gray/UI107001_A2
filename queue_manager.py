@@ -21,7 +21,7 @@ def merge(left,right): # merges two halves by comparing priority and thenm deadl
     i = 0
     j = 0
     while i < len(left) and j < len(right):
-        if (left[i].priority, left[i].deadline) < (right[j].priority, right[j].deadline):
+        if (left[i].priority, left[i].deadline) <= (right[j].priority, right[j].deadline):
             result.append(left[i])
             i += 1
         else:
