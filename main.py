@@ -22,7 +22,7 @@ def main():
             else:
                 print('\nCurrent tickets: ')
                 for ticket in tickets:
-                    print(ticket)
+                    print(f"#{ticket.ticket_id} | {ticket.title} | Priority {ticket.priority} | {ticket.status} | Due: {ticket.deadline}")
 
         elif choice == '2':
             try:
@@ -64,7 +64,7 @@ def main():
                 ticket = qm.get_ticket(ticket_id)
                 assignee = input('\nEnter assignee: ')
                 qm.assign_ticket(ticket_id, assignee)
-                print(f'\nTicket #{ticket_id} assigned successfully to {assignee}')
+                print(f'\nTicket #{ticket_id} assigned successfully to {assignee}.')
             except ValueError as e:
                 print(e)
 
@@ -79,7 +79,7 @@ def main():
                 ticket = qm.get_ticket(ticket_id)
                 status = input('\nMark as Closed or Completed?: ')
                 qm.close_ticket(ticket_id, status)
-                print(f"\nTicket #{ticket_id}'s status has been changed to {status}")
+                print(f"\nTicket #{ticket_id}'s status has been changed to {status}.")
             except ValueError as e:
                 print(e)
 
