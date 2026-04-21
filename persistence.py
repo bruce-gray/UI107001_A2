@@ -9,7 +9,7 @@ def load_tickets(): # loads tickets.json if it exists
     except FileNotFoundError:
         return []
 
-def save_tickets(tickets): # writes tickets to tickets.json
+def save_tickets(tickets): # overwrites tickets.json with current queue after every change
     with open('tickets.json', 'w') as f:
         json.dump([ticket.to_dict() for ticket in tickets], f, indent=4) # converts each Task object to a dictionary before writing
 

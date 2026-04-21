@@ -46,7 +46,7 @@ class QueueManager:
         if self.tickets == []:
             new_id = 1
         else:
-            new_id = max(ticket.ticket_id for ticket in self.tickets) + 1
+            new_id = max(ticket.ticket_id for ticket in self.tickets) + 1 # generate the next sequential ID from existing tickets
 
         # validate inputs
         validation.validate_str(title, 'Title')
@@ -101,8 +101,8 @@ class QueueManager:
             raise ValueError(f'Ticket with ID {ticket_id} not found.')
         
     def get_tickets(self):
-        tickets = [item[3] for item in sorted(self.heap)]
-        return merge_sort(tickets)
+        tickets = [item[3] for item in sorted(self.heap)] # extracts Task objects from heap tuples in heap order
+        return merge_sort(tickets) # apply merge sort as a secondary sort by deadline for tasks with equal priority
     
     def get_ticket(self, ticket_id):
         for i in range(len(self.tickets)):

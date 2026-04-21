@@ -36,7 +36,7 @@ class Task: # outlining Task object schema and setting some default values
         }
     
     @classmethod
-    def from_dict(cls, data): # return data from dictionary as new Task object
+    def from_dict(cls, data): # classmethod used as we are constructing a new Task object, not modifying an existing one
         return cls(
             ticket_id = data['ticket_id'],
             title = data['title'],
